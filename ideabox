@@ -1,8 +1,8 @@
 ---
 ideas:
-- :title: baseball
-  :description: bat
-- :title: tennis
-  :description: racket
-- :title: golf
-  :description: iron
+- title: golf
+  description: clubs
+- title: baseball
+  description: glove
+- title: tennis
+  description: racket

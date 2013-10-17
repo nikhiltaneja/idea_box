@@ -1,17 +1,7 @@
-<html>
-  <head>
-    <title>IdeaBox</title>
-  </head>
-  <body>
+
     <h1>IdeaBox</h1>
-    <form action='/' method='POST'>
-      <p>
-        Your Idea:
-      </p>
-      <input type='text' name='idea_title'/><br/>
-      <textarea name='idea_description'></textarea><br/>
-      <input type='submit'/>
-    </form>
+    
+    <%= erb :form, locals: {idea: idea, mode: "new"} %>
 
     <h3>Existing Ideas</h3>
 
@@ -28,5 +18,3 @@
       </li>
       <% end %>
     </ul>
-  </body>
-</html>
