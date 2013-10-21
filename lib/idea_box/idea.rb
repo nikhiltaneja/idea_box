@@ -11,7 +11,7 @@ class Idea
   end
 
   def save
-    IdeaStore.create("title" => title, "description" => description, "rank" => rank)
+    IdeaStore.create(to_h)
   end
 
   def to_h
