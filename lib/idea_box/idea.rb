@@ -11,16 +11,16 @@ class Idea
   end
 
   def save
-    IdeaStore.create(to_h)
+    IdeaStore.create("title" => title, "description" => description, "rank" => rank)
   end
 
-  def to_h
-    {
-      "title" => title,
-      "description" => description,
-      "rank" => rank
-    }
-  end
+  # def to_h
+  #   {
+  #     "title" => title,
+  #     "description" => description,
+  #     "rank" => rank
+  #   }
+  # end
 
   def like!
     @rank += 1
