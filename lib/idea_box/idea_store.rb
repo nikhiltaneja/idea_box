@@ -53,16 +53,24 @@ class IdeaStore
     end
   end
 
+  def self.invalid_data?(data)
+    data["title"].empty? 
+  end
+
   def self.create(data)
+    return if invalid_data?(data)
+
     database.transaction do
       database['ideas'] << data
     end
   end
 
   def self.find_ideas(phrase)
+    if phrase == ""
+      return []
+    end
     all.find_all do |idea|
       idea.title.include?(phrase) || idea.description.include?(phrase)
     end
-
   end
 end

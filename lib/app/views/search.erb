@@ -1,10 +1,20 @@
 
 
-  <% if search_results != []  %>
+  <% unless search_results.empty?  %>
 
     <% search_results.each do |idea| %>
       <%= idea.title %>
+      </br>
       <%= idea.description %>
-      <% end %>
+      </br>
+      </br>
+    <% end %>
+
+  <% else %>
+
+    <%= erb :no_search_results %>
 
   <% end %>
+
+<a href="/">Back</a>
+
