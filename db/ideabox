@@ -1,0 +1,9 @@
+---
+ideas:
+- title: sport
+  description: tennis
+- title: sport
+  description: basketball
+  rank: 1
+- title: book
+  description: the great gatsby

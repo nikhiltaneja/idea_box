@@ -2,13 +2,22 @@
 
   <% unless search_results.empty?  %>
 
+    <ul>
+
     <% search_results.each do |idea| %>
+
+    <li>
+
       <%= idea.title %>
       </br>
       <%= idea.description %>
       </br>
       </br>
+
+    </li>
     <% end %>
+
+  </ul>
 
   <% else %>
 
