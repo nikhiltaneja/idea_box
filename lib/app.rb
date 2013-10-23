@@ -13,7 +13,7 @@ class IdeaBoxApp < Sinatra::Base
   end
 
   get '/' do
-    erb :index, locals: {ideas: IdeaStore.all.sort, idea: Idea.new}
+    erb :index, locals: {ideas: IdeaStore.all.sort, idea: Idea.new, search_results: []}
   end
 
   post '/' do
@@ -56,6 +56,13 @@ class IdeaBoxApp < Sinatra::Base
     idea = Idea.new(attributes)
     idea.save
     redirect '/' 
+  end
+
+  get '/search' do
+
+    search_results = IdeaStore.find_ideas(params[:search])
+
+    erb :index, locals: {ideas: IdeaStore.all.sort, idea: Idea.new, search_results: search_results}
   end
 
 end

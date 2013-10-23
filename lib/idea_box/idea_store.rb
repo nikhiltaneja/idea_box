@@ -58,4 +58,11 @@ class IdeaStore
       database['ideas'] << data
     end
   end
+
+  def self.find_ideas(phrase)
+    all.find_all do |idea|
+      idea.title.include?(phrase) || idea.description.include?(phrase)
+    end
+
+  end
 end

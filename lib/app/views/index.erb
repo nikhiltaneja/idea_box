@@ -3,6 +3,25 @@
   
   <%= erb :form, locals: {idea: idea} %>
 
+  <h3> Search: </h3>
+
+  <form action='/search' method='GET'>
+
+    <input type='text' name='search' />
+    <input type='submit' value="Search"/>
+
+  </form>
+
+  <% if search_results != []  %>
+
+    <% search_results.each do |idea| %>
+      <%= idea.title %>
+      <%= idea.description %>
+      <% end %>
+
+  <% end %>
+
+
   <h3>Existing Ideas</h3>
 
   <ul>
