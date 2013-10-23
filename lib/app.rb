@@ -62,7 +62,7 @@ class IdeaBoxApp < Sinatra::Base
 
     search_results = IdeaStore.find_ideas(params[:search])
 
-    erb :index, locals: {ideas: IdeaStore.all.sort, idea: Idea.new, search_results: search_results}
+    erb :search, locals: {search_results: search_results}
   end
 
 end
