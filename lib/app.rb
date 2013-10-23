@@ -44,4 +44,12 @@ class IdeaBoxApp < Sinatra::Base
     redirect '/'
   end
 
+  get '/sms' do
+    title, description = params[:Body].split(", ")
+    attributes = {"title" => title, "description" => description}
+    idea = Idea.new(attributes)
+    idea.save
+    redirect '/' 
+  end
+
 end
