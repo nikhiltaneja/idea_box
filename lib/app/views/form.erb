@@ -18,5 +18,17 @@
   </br>
   </br>
 
-  <a href "/text"> How to submit an idea via SMS </a>
+  <a href="" class="box"> How to submit an idea via SMS </a>
 </form>
+
+<div class="sms-instructions">
+</div>
+
+<script>
+  $(document).ready(function(){
+    $(".box").click(function(e){
+      $(".sms-instructions").prepend("<p> Text 513-322-5473 with a message in the following format: title, description </p>");
+      e.preventDefault();
+    });
+  });
+</script>

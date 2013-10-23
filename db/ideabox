@@ -1,9 +1,8 @@
 ---
 ideas:
-- title: sport
-  description: tennis
-- title: sport
-  description: basketball
-  rank: 1
-- title: book
-  description: the great gatsby
+- title: Rocket
+  description: Land on Mars
+- title: Online education
+  description: STEM classes
+- title: Book club
+  description: Online book club

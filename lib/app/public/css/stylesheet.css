@@ -7,5 +7,11 @@ h1 {
 }
 
 input[type="submit"]:hover {
-  background-color: 006666;
+  background-color: #006666;
+}
+
+.sms-instructions {
+  background-color: white;
+  border: solid 1px;
+  width: 50%;
 }
