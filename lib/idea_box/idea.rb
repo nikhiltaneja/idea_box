@@ -22,8 +22,12 @@ class Idea
     }
   end
 
-  def like!
+  def up!
     @rank += 1
+  end
+
+  def down!
+    @rank -= 1
   end
 
   def <=>(other)

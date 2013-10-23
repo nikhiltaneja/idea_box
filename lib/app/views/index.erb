@@ -8,11 +8,23 @@
   <ul>
     <% ideas.each do |idea| %>
     <li>
-      <form action='/<%= idea.id %>/like' method='POST' style="display: inline">
-        <input type='submit' value="Like"/>
+
+      <%= idea.title %>
+
+      <form action='/<%= idea.id %>/up' method='POST' style="display: inline">
+        <input type='submit' value="↑"/>
       </form>
-      <%= idea.title %><br/>
+
+      <form action='/<%= idea.id %>/down' method='POST' style="display: inline">
+        <input type='submit' value="↓"/>
+      </form>
+
+      </br>
+
       <%= idea.description %>
+
+      </br>
+      
       <a href="/<%= idea.id %>/edit">Edit</a>
       <form action="/<%= idea.id %>" method="POST">
       <input type="hidden" name="_method" value="DELETE">

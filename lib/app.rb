@@ -36,11 +36,17 @@ class IdeaBoxApp < Sinatra::Base
     redirect '/'
   end
 
-  post '/:id/like' do |id|
+  post '/:id/up' do |id|
     idea = IdeaStore.find(id.to_i)
-    idea.like!
+    idea.up!
     IdeaStore.update(id.to_i, idea.to_h)
-    "I like this idea!"
+    redirect '/'
+  end
+
+  post '/:id/down' do |id|
+    idea = IdeaStore.find(id.to_i)
+    idea.down!
+    IdeaStore.update(id.to_i, idea.to_h)
     redirect '/'
   end
 
