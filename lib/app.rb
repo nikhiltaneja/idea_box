@@ -38,14 +38,14 @@ class IdeaBoxApp < Sinatra::Base
 
   post '/:id/up' do |id|
     idea = IdeaStore.find(id.to_i)
-    idea.up!
+    idea.up_vote!
     IdeaStore.update(id.to_i, idea.to_h)
     redirect '/'
   end
 
   post '/:id/down' do |id|
     idea = IdeaStore.find(id.to_i)
-    idea.down!
+    idea.down_vote!
     IdeaStore.update(id.to_i, idea.to_h)
     redirect '/'
   end

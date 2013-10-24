@@ -69,8 +69,14 @@ class IdeaStore
     if phrase == ""
       return []
     end
+
     all.find_all do |idea|
-      idea.title.include?(phrase) || idea.description.include?(phrase)
+      attr_search_list_for(idea).any? { |attribute| attribute.include?(phrase) }
     end
   end
+
+  def self.attr_search_list_for(idea)
+    [idea.title, idea.description]
+  end
+
 end

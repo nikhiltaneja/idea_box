@@ -22,11 +22,11 @@ class Idea
     }
   end
 
-  def up!
+  def up_vote!
     @rank += 1
   end
 
-  def down!
+  def down_vote!
     @rank -= 1
   end
 
