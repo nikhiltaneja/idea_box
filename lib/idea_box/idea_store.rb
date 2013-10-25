@@ -71,12 +71,8 @@ class IdeaStore
     end
 
     all.find_all do |idea|
-      attr_search_list_for(idea).any? { |attribute| attribute.include?(phrase) }
+      idea.title.downcase.include?(phrase) || idea.description.downcase.include?(phrase) || idea.tags.to_s.downcase.include?(phrase)
     end
-  end
-
-  def self.attr_search_list_for(idea)
-    [idea.title, idea.description]
   end
 
 end

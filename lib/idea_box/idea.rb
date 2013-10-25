@@ -1,13 +1,24 @@
 class Idea
   include Comparable
 
-  attr_reader :title, :description, :rank, :id
+  attr_reader :title, :description, :rank, :id, :tags
 
   def initialize(attributes = {})
     @title = attributes["title"]
     @description = attributes["description"]
     @rank = attributes["rank"] || 0
     @id = attributes["id"]
+    @tags = attributes["tags"].to_s.split(",").collect do |tag|
+      tag.strip
+    end
+  end
+
+  def has_tags?
+    ! tags.empty?
+  end
+
+  def tag_list
+    tags.join(",")
   end
 
   def save
@@ -18,7 +29,8 @@ class Idea
     {
       "title" => title,
       "description" => description,
-      "rank" => rank
+      "rank" => rank,
+      "tags" => tag_list
     }
   end
 

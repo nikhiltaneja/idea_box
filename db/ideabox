@@ -2,9 +2,10 @@
 ideas:
 - title: Rocket
   description: Land on Mars
+  tags: Tech
 - title: Online education
   description: STEM classes
-  rank: 1
+  tags: Tech
 - title: Book club
   description: Online book club
-  rank: 1
+  tags: Retail

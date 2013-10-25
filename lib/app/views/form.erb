@@ -2,21 +2,33 @@
   <h3>
     <% if idea.id %>
       Edit your Idea
+
+      <br />
+
+      <input type='text' name='idea[title]' value="<%= idea.title %>" placeholder = "Title"/><br/>
+      <textarea name='idea[description]'><%= idea.description %></textarea><br/>
+      <input type='text' name='idea[tags]' value="<%= idea.tag_list %>" placeholder = "Tags"/><br/>
+      <input type='submit'/>
+
     <% else %>
       Your Idea:
+
+      <br />
+
+      <input type='text' name='idea[title]' value="<%= idea.title %>" placeholder='Title'/><br/>
+      <textarea placeholder='Description' name='idea[description]'></textarea><br/>
+      <input type='text' name='idea[tags]' value="<%= idea.tag_list %>" placeholder = "Tags"/><br/>
+      <input type='submit'/>
+
     <% end %>
+
   </h3>
 
   <% if idea.id %>
     <input type="hidden" name="_method" value="PUT" />
   <% end %>
 
-  <input type='text' name='idea[title]' value="<%= idea.title %>"/><br/>
-  <textarea name='idea[description]'><%= idea.description %></textarea><br/>
-  <input type='submit'/>
-
-  </br>
-  </br>
+  <br />
 
   <a href="" class="box"> How to submit an idea via SMS </a>
 </form>

@@ -2,15 +2,20 @@
 
     <ul>
 
+      <h2>
+
+        Tag: <%= params[:search].capitalize %>
+
+      </h2>
+
     <% search_results.each do |idea| %>
 
     <li>
-
       <%= idea.title %>
-      </br>
+      <br />
       <%= idea.description %>
-      </br>
-      </br>
+      <br />
+      <br />
 
     </li>
     <% end %>

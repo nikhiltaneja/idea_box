@@ -59,7 +59,7 @@ class IdeaBoxApp < Sinatra::Base
   end
 
   get '/search' do
-    search_results = IdeaStore.find_ideas(params[:search])
+    search_results = IdeaStore.find_ideas(params[:search].downcase)
     erb :search, locals: {search_results: search_results}
   end
 

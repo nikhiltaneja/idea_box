@@ -6,7 +6,7 @@
 
   <form action='/search' method='GET'>
 
-    <input type='text' name='search' />
+    <input type='text' name='search' placeholder='Title, Description, or Tag' style="width: 30%"/>
     <input type='submit' value="Search"/>
 
   </form>
@@ -31,8 +31,16 @@
       </br>
 
       <%= idea.description %>
+      
+      </br>
+      <% if idea.has_tags? %>
+
+      Tag: <%= idea.tag_list %>
 
       </br>
+
+      <% end %>
+
       
       <a href="/<%= idea.id %>/edit">Edit</a>
       <form action="/<%= idea.id %>" method="POST">
