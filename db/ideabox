@@ -1,11 +1,12 @@
 ---
 ideas:
-- title: Rocket
-  description: Land on Mars
-  tags: Tech
 - title: Online education
   description: STEM classes
   tags: Tech
-- title: Book club
-  description: Online book club
-  tags: Retail
+- title: Mobile phone payments
+  description: No need to carry around wallets anymore
+  rank: 1
+  tags: Tech
+- title: Indian Chipotle
+  description: Indian restaurant that emulates the Chipotle concept
+  tags: Food

@@ -1,32 +1,35 @@
-  <% unless search_results.empty?  %>
+<% unless search_results.empty?  %>
 
-    <ul>
+  <ul>
 
-      <h2>
+    <h2>
 
-        Tag: <%= params[:search].capitalize %>
+      Search results for: <%= params[:search].capitalize %>
 
-      </h2>
+    </h2>
 
     <% search_results.each do |idea| %>
 
-    <li>
-      <%= idea.title %>
-      <br />
-      <%= idea.description %>
-      <br />
-      <br />
+      <li>
+        <%= idea.title %>
 
-    </li>
+        <br />
+
+        <%= idea.description %>
+
+        <br />
+        <br />
+
+      </li>
     <% end %>
 
   </ul>
 
-  <% else %>
+<% else %>
 
-    <%= erb :no_search_results %>
+  <%= erb :no_search_results %>
 
-  <% end %>
+<% end %>
 
 <a href="/">Back</a>
 

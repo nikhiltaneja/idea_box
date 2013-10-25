@@ -4,9 +4,9 @@ This Sinatra project allows someone to record and track all of their ideas in on
 
 ## Features
 
-- Create/edit/delete an idea
-- Tag an idea 
-- Rank an idea via up/down buttons
+- Create/edit/delete ideas
+- Tag ideas 
+- Rank ideas via up/down buttons
 - Search for an idea
 - Text an idea
 
