@@ -3,11 +3,18 @@ require 'yaml/store'
 class IdeaStore
 
   def self.database
-    return @database if @database
-
-    @database ||= YAML::Store.new('db/ideabox')
-    @database.transaction do
-      @database['ideas'] ||= []
+    if ENV['RACK_ENV'] == 'test'
+      return @database if @database
+      @database ||= YAML::Store.new('db/ideabox_test')
+      @database.transaction do
+        @database['ideas'] ||= []
+      end
+    else
+      return @database if @database
+      @database ||= YAML::Store.new('db/ideabox')
+      @database.transaction do
+        @database['ideas'] ||= []
+      end
     end
     @database
   end
@@ -73,6 +80,10 @@ class IdeaStore
     all.find_all do |idea|
       idea.title.downcase.include?(phrase) || idea.description.downcase.include?(phrase) || idea.tags.to_s.downcase.include?(phrase)
     end
+  end
+
+  def self.delete_all
+    @all = []
   end
 
 end

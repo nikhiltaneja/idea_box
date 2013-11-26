@@ -1,24 +1,32 @@
-<form action='/<%= idea.id %>' method='POST'>
+<form class="form" action='/<%= idea.id %>' method='POST'>
   <h3>
     <% if idea.id %>
       Edit your Idea
 
       <br />
 
-      <input type='text' name='idea[title]' value="<%= idea.title %>" placeholder = "Title"/><br/>
-      <textarea name='idea[description]'><%= idea.description %></textarea><br/>
-      <input type='text' name='idea[tags]' value="<%= idea.tag_list %>" placeholder = "Tags"/><br/>
-      <input type='submit'/>
+      <div class="input-group">
+
+        <input class="form-group"  type='text' name='idea[title]' value="<%= idea.title %>" placeholder = "Title"/><br/>
+        <textarea class="form-group" name='idea[description]'><%= idea.description %></textarea><br/>
+        <input class="form-group" type='text' name='idea[tags]' value="<%= idea.tag_list %>" placeholder = "Tags"/><br/>
+        <input class="form-control btn btn-success" type='submit' />
+
+      </div>
 
     <% else %>
       Your Idea:
 
       <br />
 
-      <input type='text' name='idea[title]' value="<%= idea.title %>" placeholder='Title'/><br/>
-      <textarea placeholder='Description' name='idea[description]'></textarea><br/>
-      <input type='text' name='idea[tags]' value="<%= idea.tag_list %>" placeholder = "Tags"/><br/>
-      <input type='submit'/>
+      <div class="input-group">
+
+        <input class="form-control" type='text' name='idea[title]' value="<%= idea.title %>" placeholder='Title'/><br/>
+        <textarea class="form-control" placeholder='Description' name='idea[description]'></textarea><br/>
+        <input class="form-control" type='text' name='idea[tags]' value="<%= idea.tag_list %>" placeholder = "Tags"/><br/>
+        <input class="form-control btn btn-success" type='submit' id="submit"/>
+
+      </div>
 
     <% end %>
 

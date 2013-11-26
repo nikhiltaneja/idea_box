@@ -1,0 +1,18 @@
+.center {
+  text-align: center;
+}
+
+.idea-row{
+  margin: 5px;
+  border-bottom: 1px dashed gray;
+}
+
+.arrows, .edit-delete{
+  margin-top: 1%;
+  margin-bottom: 1%;
+  text-align: center;
+}
+
+body{
+  background-color: LightBlue;
+}

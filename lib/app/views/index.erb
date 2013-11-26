@@ -1,52 +1,62 @@
-  <h1>Welcome to IdeaBox</h1>
-  
-  <%= erb :form, locals: {idea: idea} %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1 class="center">Welcome to IdeaBox</h1>
+      
+        <%= erb :form, locals: {idea: idea} %>
 
-  <h3> Search: </h3>
+      <h3> Search: </h3>
 
-  <form action='/search' method='GET'>
-
-    <input type='text' name='search' placeholder='Title, Description, or Tag' style="width: 30%"/>
-    <input type='submit' value="Search"/>
-
-  </form>
-
+      <form class="form" action='/search' method='GET'>
+        <div class="input-group">
+          <input class="form-control" type='text' name='search' placeholder='Title, Description, or Tag'/>
+          <input class="form-control btn btn-success" type='submit' value="Search"/>
+        </div>
+      </form>
+    </div>
+  </div>
 
   <h3>Existing Ideas</h3>
 
-  <ul>
-    <% ideas.each do |idea| %>
-    <li>
+  <% ideas.each do |idea| %>
 
-      <%= idea.title %>
+    <div class="row idea-row">
+      <div class="col-md-12">
+        <div class="col-md-4">
+          <h4><%= idea.title %></h4>
+          <p><%= idea.description %></p>
+  
+          <% if idea.has_tags? %>
 
-      <form action='/<%= idea.id %>/up' method='POST' style="display: inline">
-        <input type='submit' value="↑"/>
-      </form>
+           <p> Tag: <%= idea.tag_list %> </p>
 
-      <form action='/<%= idea.id %>/down' method='POST' style="display: inline">
-        <input type='submit' value="↓"/>
-      </form>
+          <% end %>
 
-      </br>
+        </div>
 
-      <%= idea.description %>
+        <div class="col-md-4 arrows">
+          <form action='/<%= idea.id %>/up' method='POST'>
+            <input type='submit' value="↑"/>
+          </form>
+
+          <form action='/<%= idea.id %>/down' method='POST'>
+            <input type='submit' value="↓"/>
+          </form>
+        </div>
+
+        <div class="col-md-4 edit-delete">
+        
+          <a href="/<%= idea.id %>/edit">Edit</a>
+          <form action="/<%= idea.id %>" method="POST">
+          <input type="hidden" name="_method" value="DELETE">
+          <input type="submit" value="Delete"/>
+          </form>
+        </div>
+
+      </div>
+    </div>
       
-      </br>
-      <% if idea.has_tags? %>
+  <% end %>
 
-      Tag: <%= idea.tag_list %>
 
-      </br>
-
-      <% end %>
-
-      
-      <a href="/<%= idea.id %>/edit">Edit</a>
-      <form action="/<%= idea.id %>" method="POST">
-      <input type="hidden" name="_method" value="DELETE">
-      <input type="submit" value="Delete"/>
-      </form>
-    </li>
-    <% end %>
-  </ul>
+</div>
